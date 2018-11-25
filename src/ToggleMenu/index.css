@@ -1,0 +1,50 @@
+.ToggleMenu {
+  background: transparent;
+  border: 1px solid transparent;
+  position: relative;
+  justify-self: end;
+  padding-right: 15px;
+}
+.ToggleMenu:focus {
+  outline-width: 0;
+}
+.ToggleMenu:hover {
+  cursor: pointer;
+}
+.ToggleMenu [class*="bar-"] {
+  -ms-transform: rotate(0deg);
+  -o-transition: 0.2s ease all;
+  -webkit-transform: rotate(0deg);
+  -webkit-transition: 0.2s ease all;
+  background: #000;
+  border-radius: 8px;
+  display: block;
+  height: 3px;
+  margin-bottom: 7px;
+  transform: rotate(0deg);
+  transition: 0.2s ease all;
+  width: 35px;
+}
+.ToggleMenu .bar-bot {
+  margin-bottom: 0;
+}
+.ToggleMenu[data-open="true"] .bar-top {
+  -webkit-transform: rotate(45deg);
+  -webkit-transform-origin: 15% 15%;
+  transform: rotate(45deg);
+  transform-origin: 10% 15%;
+}
+.ToggleMenu[data-open="true"] .bar-mid {
+  opacity: 0;
+}
+.ToggleMenu[data-open="true"] .bar-bot {
+  -webkit-transform: rotate(45deg);
+  -webkit-transform-origin: 15% 95%;
+  transform: rotate(-45deg);
+  transform-origin: 10% 95%;
+}
+@media only screen and (min-width: 600px) {
+  .ToggleMenu {
+    display: none;
+  }
+}

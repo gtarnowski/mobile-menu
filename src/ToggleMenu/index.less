@@ -1,0 +1,72 @@
+@toggle-primary: #000;
+
+.ToggleMenu {
+  background: transparent;
+  border: 1px solid transparent;
+  position: relative;
+  justify-self: end;
+  padding-right: 15px;
+
+  &:focus {
+    outline-width: 0;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  [class*="bar-"] {
+    -ms-transform: rotate(0deg);
+    -o-transition: 0.2s ease all;
+    -webkit-transform: rotate(0deg);
+    -webkit-transition: 0.2s ease all;
+    background: @toggle-primary;
+    border-radius: 8px;
+    display: block;
+    height: 3px;
+    margin-bottom: 7px;
+    transform: rotate(0deg);
+    transition: 0.2s ease all;
+    width: 35px;
+  }
+
+  .bar-bot {
+    margin-bottom: 0;
+  }
+
+  &[data-open="true"] {
+    .bar-top {
+      -webkit-transform: rotate(45deg);
+      -webkit-transform-origin: 15% 15%;
+      transform: rotate(45deg);
+      transform-origin: 10% 15%;
+    }
+
+    .bar-mid {
+      opacity: 0;
+    }
+
+    .bar-bot {
+      -webkit-transform: rotate(45deg);
+      -webkit-transform-origin: 15% 95%;
+      transform: rotate(-45deg);
+      transform-origin: 10% 95%;
+    }
+  }
+
+  //@media @phones {
+  //  &[data-fixed="true"] {
+  //    [class*="bar-"] {
+  //      background-color: @black;
+  //    }
+  //  }
+  //  &[data-open="true"] {
+  //    [class*="bar-"] {
+  //      background-color: @snowy;
+  //    }
+  //  }
+  //}
+
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+}
